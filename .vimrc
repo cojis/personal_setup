@@ -15,6 +15,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'blueshirts/darcula'
 call plug#end()
 
 set autowrite
@@ -24,6 +26,11 @@ let mapleader = "\<Space>"
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>s :wincmd r<CR>
 
 " Leader is \
 " run :GoBuild or :GoTestCompile based on the go file
@@ -51,10 +58,18 @@ set number
 " removes green line numbers
 " https://github.com/chriskempson/base16-vim
 let base16colorspace=256
- colorscheme base16-default-dark
+colorscheme base16-default-dark
 " colorscheme base16-eighties
+
+" seoul256
+" let g:seoul256_background=234
+" colorscheme seoul256
+" set background=dark
+
 " colorscheme gruvbox
-"let g:gruvbox_contrast_dark = "soft"
+" let g:gruvbox_contrast_dark = "medium"
+
+"set termguicolors
 syntax on
 
 " typescript settings
@@ -100,5 +115,18 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rr <Plug>(coc-rename)
+nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>gn <Plug>(coc-diagnostic-next)
+
+" fzf
+" f = files in git repo
+" df = directory files
+nnoremap <leader>f :GitFiles<CR>
+nnoremap <leader>df :Files<CR>
+
+" tmux compatability with scrolling
+" Makes mouse available for all modes
+set mouse=a
 
 filetype plugin on
