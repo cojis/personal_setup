@@ -27,4 +27,7 @@ return require('packer').startup(function()
   -- colorscheme
   -- use { 'NTBBloodbath/doom-one.nvim' }
   use { 'romgrk/doom-one.vim' }
+
+  -- golang
+  use { 'fatih/vim-go' }
 end)

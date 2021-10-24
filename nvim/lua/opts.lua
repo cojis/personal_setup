@@ -15,3 +15,6 @@ opt.termguicolors = true
 
 -- doom-one colorscheme
 g.doom_one_terminal_colors = true
+
+-- vim-go
+
